@@ -1,7 +1,7 @@
 const Product = require('../models/product');
 
 exports.getProductForm = (req, res, next) => {
-    res.render('add-product', { name: 'Tina', path: '/admin/add-product', pageTitle: 'Add Product' });
+    res.render('add-product', { name: 'Sampoo', path: '/admin/add-product', pageTitle: 'Add Product' });
 }
 
 exports.postProduct = (req, res, next) => {
@@ -20,7 +20,7 @@ exports.postProduct = (req, res, next) => {
 exports.editProductPage = (req, res, next) => {
     Product.findById(req.params.prodId)
         .then(product => {
-            res.render('edit-product', { product: product, path: '/', pageTitle: 'Edit Product', name: 'Tina' });
+            res.render('edit-product', { product: product, path: '/', pageTitle: 'Edit Product', name: 'Sampoo' });
         }).catch(err => console.log(err));
 }
 
@@ -34,7 +34,7 @@ exports.editProductPost = (req, res, next) => {
 }
 
 exports.deleteProduct = (req, res, next) => {
-    Product.findByIdAndRemove(req.body.id) //findAndModify
+    Product.findByIdAndRemove(req.body.id) 
         .then(result => {
             res.redirect('/');
         })

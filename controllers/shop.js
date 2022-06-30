@@ -3,7 +3,7 @@ const Product = require('../models/product');
 exports.getAllProducts = (req, res, next) => {
     Product.find()
         .then(products => {
-            res.render('index', { name: 'Josh', prods: products, path: '/', pageTitle: 'Home' });
+            res.render('index', { name: 'Legend', prods: products, path: '/', pageTitle: 'Home' });
         })
         .catch(err => console.log(err));
 };
@@ -11,7 +11,7 @@ exports.getAllProducts = (req, res, next) => {
 exports.getProductDetail = (req, res, next) => {
     Product.findById(req.params.prodId)
         .then(product => {
-            res.render('product-detail', { prod: product, pageTitle: 'Product Detail', path: '/', name: 'Edward' });
+            res.render('product-detail', { prod: product, pageTitle: 'Product Detail', path: '/', name: 'Dlipkart' });
         })
         .catch(err => console.log(err));
 }
@@ -28,7 +28,7 @@ exports.getCart = (req, res, next) => {
         .populate('cart.items.productId')
         .then(user => {
             console.log(user);
-            res.render('cart', { cart: user.cart, pageTitle: 'Shopping Cart Detail', path: '/cart', name: 'Edward' });
+            res.render('cart', { cart: user.cart, pageTitle: 'Shopping Cart Detail', path: '/cart', name: 'Dlipkart' });
         })
         .catch(err => console.log(err));
 }

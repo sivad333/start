@@ -1,11 +1,30 @@
-<footer class="py-5 bg-dark">
-    <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2022</p>
+<footer>
+    <div class="container-fluid" style="width: 100%;">
+        <h3 style="text-align: center;" class="p-5">
+          Copyright &copy; Grocery Website 2022</h3>
     </div>
 </footer>
 
-<script src="/public/js/bootstrap.js"></script>
-<script src="/public/js/jquery.js"></script>
+<script src="/js/bootstrap.js"></script>
+<script src="/js/jquery.js"></script>
+<script>
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() 
+    {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      for (i = 0; i < slides.length; i++) 
+      {
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) {slideIndex = 1}
+      slides[slideIndex-1].style.display = "block";
+      setTimeout(showSlides, 2000); 
+    }
+</script>
 
 </body>
 </html>

@@ -14,7 +14,7 @@ const PORT = 1134;
 app.set('view engine', 'ejs');
 
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname,'public')));
 
 app.use((req, res, next) => {
     User.findById('62bbf992e11408baca21d102')
